@@ -1,0 +1,26 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Godot export templates
+export_presets.cfg
+
+# Godot build output
+*.import/
+*.tmp/
+*.translation/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Godot lock files
+.lock
+
+# User-specific files
+*.user
+*.godot_imported
+
+# VSCode settings
+.vscode/

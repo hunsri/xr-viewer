@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://3blx4og67exo"]
+
+[ext_resource type="Script" uid="uid://dhuuuhbrnurpt" path="res://main.gd" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://b0fo7vs64ylpi" path="res://blueprints/xr_player.tscn" id="2_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://bkatnprgilglq" path="res://blueprints/pickable_object.tscn" id="3_r0du0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rxg2q"]
+size = Vector3(10000, 0.1, 10000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glv2v"]
+albedo_color = Color(0.152941, 0.321569, 0.372549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uu6xs"]
+material = SubResource("StandardMaterial3D_glv2v")
+size = Vector3(10000, 0.1, 10000)
+
+[sub_resource type="Environment" id="Environment_r0du0"]
+glow_enabled = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_cm0pq"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_glv2v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707132, -0.362692, 0.606976, 0, 0.858423, 0.512942, -0.707082, -0.362717, 0.607018, 0, 1.8185, 3.1875)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_rxg2q")
+
+[node name="Ground" type="MeshInstance3D" parent="StaticBody3D"]
+visible = false
+mesh = SubResource("BoxMesh_uu6xs")
+
+[node name="XROrigin3D" parent="." instance=ExtResource("2_uu6xs")]
+
+[node name="OpenXRFbSceneManager" type="OpenXRFbSceneManager" parent="XROrigin3D"]
+
+[node name="PickableObject" parent="." instance=ExtResource("3_r0du0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500618, 0.146883, -1.80075)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_r0du0")
+camera_attributes = SubResource("CameraAttributesPractical_cm0pq")
