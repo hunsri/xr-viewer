@@ -9,8 +9,8 @@ var rotation_speed = 180
 @export var active: bool = false
 @export var ware: Node3D 
 
-var timeout: float = 4500.0
-var stop_in
+var timeout: float = 10000.0
+var stop_in = 0
 
 func activate():
 	active = true
@@ -20,7 +20,7 @@ func deactivate():
 	active = false
 
 func _process(delta):
-	
+
 	if !active:
 		return
 	
