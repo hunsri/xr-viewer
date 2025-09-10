@@ -7,7 +7,6 @@ var rotation_speed = 180
 @export var rail: Node3D
 
 @export var active: bool = false
-@export var ware: Node3D 
 
 var timeout: float = 10000.0
 var stop_in = 0

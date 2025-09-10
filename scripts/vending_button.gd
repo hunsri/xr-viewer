@@ -38,12 +38,10 @@ func _on_exited():
 	button_mesh.set_surface_override_material(0, mat)
 	# Optional: Reset visual feedback
 
-
-func _on_right_hand_selector_area_entered(area: Area3D):
-	if area.name == "Button0":
+func _on_area_entered(area: Area3D) -> void:
+	if area.name == "RightHandSelector" || area.name == "LeftHandSelector":
 		_on_entered()
 
-
-func _on_right_hand_selector_area_exited(area: Area3D) -> void:
-	if area.name == "Button0":
+func _on_area_exited(area: Area3D) -> void:
+	if area.name == "RightHandSelector" || area.name == "LeftHandSelector":
 		_on_exited()
