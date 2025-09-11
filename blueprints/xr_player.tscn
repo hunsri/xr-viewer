@@ -1,15 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0fo7vs64ylpi"]
+[gd_scene load_steps=9 format=3 uid="uid://b0fo7vs64ylpi"]
 
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_cowsy"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_gqs4i"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_3fn7c"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="4_yx1it"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_jo1tx"]
+[ext_resource type="Script" uid="uid://dq83gywt1ge7v" path="res://blueprints/laserpointer.gd" id="6_gqs4i"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_ted84"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_gqs4i"]
+radius = 0.003
+height = 0.01
 
 [node name="XROrigin3D" type="XROrigin3D"]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0219417, 0.0148249, 0.459442)
 
 [node name="Controller_Left" type="XRController3D" parent="."]
 tracker = &"left_hand"
@@ -30,6 +36,21 @@ tracker = &"right_hand"
 turn_mode = 2
 
 [node name="FunctionPickup" parent="Controller_Right" instance=ExtResource("3_3fn7c")]
+
+[node name="Laserpointer" type="Node3D" parent="Controller_Right"]
+script = ExtResource("6_gqs4i")
+
+[node name="Ray" type="RayCast3D" parent="Controller_Right/Laserpointer"]
+target_position = Vector3(0, -15, 0)
+
+[node name="Dot" type="MeshInstance3D" parent="Controller_Right/Laserpointer"]
+transform = Transform3D(0.999999, 0, 0.00115192, 0, 1, 0, -0.00115192, 0, 0.999999, 0, -0.0343098, 0)
+gi_lightmap_texel_scale = 0.4955
+mesh = SubResource("SphereMesh_gqs4i")
+
+[node name="Beam" type="CSGCylinder3D" parent="Controller_Right/Laserpointer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0237699, 0)
+radius = 0.003
 
 [node name="PlayerBody" parent="." instance=ExtResource("6_ted84")]
 player_calibrate_height = false

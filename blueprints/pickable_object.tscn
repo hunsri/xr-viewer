@@ -19,11 +19,15 @@ size = Vector3(0.1, 0.1, 0.1)
 [node name="CollisionShape3D" parent="." index="0"]
 shape = SubResource("BoxShape3D_eqyra")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
-mesh = SubResource("BoxMesh_kcyqt")
-
-[node name="GrabPointHandLeft" parent="." index="2" instance=ExtResource("2_kcyqt")]
+[node name="GrabPointHandLeft" parent="." index="1" instance=ExtResource("2_kcyqt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0294118, 0.0166247, -0.0799382)
 
-[node name="GrabPointHandRight" parent="." index="3" instance=ExtResource("3_a36e7")]
+[node name="GrabPointHandRight" parent="." index="2" instance=ExtResource("3_a36e7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0338578, 0.021501, -0.0641671)
+
+[node name="ScaleRoot" type="Node3D" parent="." index="3"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ScaleRoot" index="0"]
+layers = 12
+mesh = SubResource("BoxMesh_kcyqt")
+skeleton = NodePath("../..")
