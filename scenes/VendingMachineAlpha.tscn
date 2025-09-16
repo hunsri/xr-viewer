@@ -1,0 +1,127 @@
+[gd_scene load_steps=13 format=3 uid="uid://8mbq0jlk00n6"]
+
+[ext_resource type="Script" uid="uid://iedhu41wgx3b" path="res://scripts/vending_manager.gd" id="1_jlcnk"]
+[ext_resource type="Script" uid="uid://d2mpwjsmg0lvr" path="res://scripts/vending_spiral.gd" id="2_f1bmw"]
+[ext_resource type="ArrayMesh" uid="uid://bw6e8wc00irwg" path="res://models/spiral.obj" id="2_gwgpn"]
+[ext_resource type="Script" uid="uid://bfcay1fi7hqd4" path="res://scripts/vending_rail.gd" id="3_ja4f8"]
+[ext_resource type="Script" uid="uid://c1tvd8hayb4v5" path="res://scripts/ware_info.gd" id="5_1tudr"]
+[ext_resource type="Script" uid="uid://doainque8l2a8" path="res://scripts/vending_button.gd" id="6_c1ttp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_53nql"]
+size = Vector3(0.4, 0.4, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ja4f8"]
+albedo_color = Color(1, 1, 0.447059, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_53nql"]
+material = SubResource("StandardMaterial3D_ja4f8")
+size = Vector3(0.4, 0.4, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gwgpn"]
+size = Vector3(1.91998, 2.43259, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f1bmw"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jlcnk"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="VendingMachineAlpha" type="Node3D"]
+
+[node name="VendingManager" type="Node3D" parent="." node_paths=PackedStringArray("node_list", "drop_collector")]
+unique_name_in_owner = true
+script = ExtResource("1_jlcnk")
+node_list = [NodePath("../SpiralA")]
+drop_collector = NodePath("../Collector")
+
+[node name="SpiralA" type="Node3D" parent="." node_paths=PackedStringArray("main_spiral", "support_spiral", "rail")]
+script = ExtResource("2_f1bmw")
+main_spiral = NodePath("MainSpiral")
+support_spiral = NodePath("SupportSpiral")
+rail = NodePath("Rail")
+
+[node name="MainSpiral" type="MeshInstance3D" parent="SpiralA"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = ExtResource("2_gwgpn")
+skeleton = NodePath("../..")
+
+[node name="SupportSpiral" type="MeshInstance3D" parent="SpiralA"]
+transform = Transform3D(-0.1, 8.74228e-09, 0, -8.74228e-09, -0.1, 0, 0, 0, 0.5, 0.4, 0, 0)
+mesh = ExtResource("2_gwgpn")
+skeleton = NodePath("../..")
+
+[node name="Rail" type="Node3D" parent="SpiralA"]
+script = ExtResource("3_ja4f8")
+
+[node name="ExampleWare" type="RigidBody3D" parent="SpiralA/Rail"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201271, 0.00676215, 0.291358)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("5_1tudr")
+url = "https://ko-fi.com/alsocolors"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpiralA/Rail/ExampleWare"]
+shape = SubResource("BoxShape3D_53nql")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpiralA/Rail/ExampleWare"]
+mesh = SubResource("BoxMesh_53nql")
+
+[node name="ExampleWare2" type="RigidBody3D" parent="SpiralA/Rail"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201271, 0.00676215, 0.503961)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("5_1tudr")
+url = "https://ko-fi.com/alsocolors"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpiralA/Rail/ExampleWare2"]
+shape = SubResource("BoxShape3D_53nql")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpiralA/Rail/ExampleWare2"]
+mesh = SubResource("BoxMesh_53nql")
+
+[node name="ExampleWare3" type="RigidBody3D" parent="SpiralA/Rail"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201271, 0.00676215, 0.70333)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("5_1tudr")
+url = "https://ko-fi.com/alsocolors"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpiralA/Rail/ExampleWare3"]
+shape = SubResource("BoxShape3D_53nql")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpiralA/Rail/ExampleWare3"]
+mesh = SubResource("BoxMesh_53nql")
+
+[node name="DropOffArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19546, 0, 1.10149)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DropOffArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0660236)
+shape = SubResource("BoxShape3D_gwgpn")
+
+[node name="Collector" type="Node3D" parent="."]
+
+[node name="Button0" type="Area3D" parent="." node_paths=PackedStringArray("button_mesh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.793806, 0.116961, 1.02754)
+script = ExtResource("6_c1ttp")
+button_mesh = NodePath("MeshInstance3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Button0"]
+shape = SubResource("BoxShape3D_f1bmw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Button0"]
+mesh = SubResource("BoxMesh_jlcnk")
+
+[connection signal="body_entered" from="DropOffArea" to="SpiralA/Rail" method="_on_drop_area_body_entered"]

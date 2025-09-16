@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="XRViewer"
-run/main_scene="uid://3blx4og67exo"
+run/main_scene="uid://csmps8xwfhi4r"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
