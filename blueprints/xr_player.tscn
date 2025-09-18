@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0fo7vs64ylpi"]
+[gd_scene load_steps=8 format=3 uid="uid://b0fo7vs64ylpi"]
 
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_cowsy"]
-[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_gqs4i"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_3fn7c"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="4_yx1it"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_jo1tx"]
@@ -22,18 +21,15 @@ tracker = &"left_hand"
 
 [node name="LeftHand" parent="Controller_Left" instance=ExtResource("1_cowsy")]
 
-[node name="MovementDirect" parent="Controller_Left" instance=ExtResource("2_gqs4i")]
-strafe = true
-
 [node name="FunctionPickup" parent="Controller_Left" instance=ExtResource("3_3fn7c")]
+
+[node name="MovementTurn" parent="Controller_Left" instance=ExtResource("5_jo1tx")]
+turn_mode = 2
 
 [node name="Controller_Right" type="XRController3D" parent="."]
 tracker = &"right_hand"
 
 [node name="RightHand" parent="Controller_Right" instance=ExtResource("4_yx1it")]
-
-[node name="MovementTurn" parent="Controller_Right" instance=ExtResource("5_jo1tx")]
-turn_mode = 2
 
 [node name="FunctionPickup" parent="Controller_Right" instance=ExtResource("3_3fn7c")]
 

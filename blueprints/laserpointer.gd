@@ -105,8 +105,7 @@ func _physics_process(dt: float) -> void:
 func _on_controller_button_pressed(btn: String) -> void:
 	if btn == select_button_name:
 		_on_press_select()
-	elif btn == scale_button_name:
-		_toggle_scale_mode()
+
 
 func _on_controller_button_released(_btn: String) -> void:
 	pass
@@ -159,6 +158,9 @@ func _set_selected(n: Node3D) -> void:
 	if is_instance_valid(_selected):
 		_selected_scale_node = _get_scale_node(_selected)
 		_apply_outline(_selected)
+
+		# 👉 Hier direkt Skalierungsmodus aktivieren
+		_enter_scale_mode()
 
 func _get_scale_node(n: Node3D) -> Node3D:
 	var sr: Node = n.get_node_or_null("ScaleRoot")
