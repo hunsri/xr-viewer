@@ -35,6 +35,7 @@ tracker = &"right_hand"
 
 [node name="Laserpointer" type="Node3D" parent="Controller_Right"]
 script = ExtResource("6_gqs4i")
+max_distance = 30.0
 
 [node name="Ray" type="RayCast3D" parent="Controller_Right/Laserpointer"]
 target_position = Vector3(0, -15, 0)
@@ -49,4 +50,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0237699, 0)
 radius = 0.003
 
 [node name="PlayerBody" parent="." instance=ExtResource("6_ted84")]
+collision_mask = 1019
+axis_lock_linear_x = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 player_calibrate_height = false

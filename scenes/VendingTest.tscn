@@ -679,6 +679,14 @@ transform = Transform3D(0.384408, 0, -0.923163, 0, 1, 0, 0.923163, 0, 0.384408, 
 [node name="LeftHandSelector" type="Area3D" parent="XROrigin3D/Controller_Left" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0121954, -0.00481176, -0.0153258)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/Controller_Left/LeftHandSelector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00382122, -0.0101533, 0.0133782)
+shape = SubResource("SphereShape3D_sebaf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/Controller_Left/LeftHandSelector/CollisionShape3D"]
+visible = false
+mesh = SubResource("SphereMesh_sebaf")
+
 [node name="RightHandSelector" type="Area3D" parent="XROrigin3D/Controller_Right" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00832005, -0.0022831, -0.0116367)
 
