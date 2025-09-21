@@ -62,7 +62,6 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("5_1tudr")
-url = "https://ko-fi.com/alsocolors"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpiralA/Rail/ExampleWare"]
 shape = SubResource("BoxShape3D_53nql")
@@ -79,7 +78,6 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("5_1tudr")
-url = "https://ko-fi.com/alsocolors"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpiralA/Rail/ExampleWare2"]
 shape = SubResource("BoxShape3D_53nql")
@@ -96,7 +94,6 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("5_1tudr")
-url = "https://ko-fi.com/alsocolors"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpiralA/Rail/ExampleWare3"]
 shape = SubResource("BoxShape3D_53nql")

@@ -105,8 +105,7 @@ func _physics_process(dt: float) -> void:
 func _on_controller_button_pressed(btn: String) -> void:
 	if btn == select_button_name:
 		_on_press_select()
-	elif btn == scale_button_name:
-		_toggle_scale_mode()
+
 
 func _on_controller_button_released(_btn: String) -> void:
 	pass
@@ -159,6 +158,9 @@ func _set_selected(n: Node3D) -> void:
 	if is_instance_valid(_selected):
 		_selected_scale_node = _get_scale_node(_selected)
 		_apply_outline(_selected)
+
+		# 👉 Hier direkt Skalierungsmodus aktivieren
+		_enter_scale_mode()
 
 func _get_scale_node(n: Node3D) -> Node3D:
 	var sr: Node = n.get_node_or_null("ScaleRoot")
@@ -265,8 +267,13 @@ func _update_scale_from_stick(dt: float) -> void:
 		var steps: float = round(_scale_factor / scale_snap_step)
 		_scale_factor = clamp(steps * scale_snap_step, scale_min, scale_max)
 
-	_selected_scale_node.scale = _scale_base * _scale_factor
+	scale_node(_selected_scale_node, _scale_base * _scale_factor)
 	_update_scale_ui()
+
+func scale_node(node :Node3D, new_scale: Vector3) -> void:
+	if node.has_method("scale_object"):
+		node.scale_object(new_scale)
+
 
 func _create_scale_ui() -> void:
 	_destroy_scale_ui()
@@ -286,7 +293,7 @@ func _create_scale_ui() -> void:
 
 	_ui_fill = CSGBox3D.new()
 	_ui_fill.size = Vector3(0.001, 0.010, 0.001)
-	_ui_fill.position = Vector3(-0.07, 0.0, 0.0)
+	_ui_fill.position = Vector3(-0.07, 0.0, 0.001)
 	_ui_fill.use_collision = false
 	var fill_mat: StandardMaterial3D = StandardMaterial3D.new()
 	fill_mat.albedo_color = Color(0.95, 0.75, 0.15, 1.0)
