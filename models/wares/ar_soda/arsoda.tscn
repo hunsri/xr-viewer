@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://3poi53gaayx3"]
+
+[ext_resource type="PackedScene" uid="uid://yoga5khieos4" path="res://models/wares/ar_soda/ARSODA.glb" id="1_3opwe"]
+
+[node name="ARSODA" instance=ExtResource("1_3opwe")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0, 0, 0)

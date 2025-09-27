@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b2nooa6nkgbh"
-path="res://.godot/imported/VendingMachine.glb-a892a48251bf400974e8dc5a40ffeb72.scn"
+uid="uid://yoga5khieos4"
+path="res://.godot/imported/ARSODA.glb-c74cf4354b871bac6da56cbe3d0b8a88.scn"
 
 [deps]
 
-source_file="res://models/VendingMachine.glb"
-dest_files=["res://.godot/imported/VendingMachine.glb-a892a48251bf400974e8dc5a40ffeb72.scn"]
+source_file="res://models/wares/ar_soda/ARSODA.glb"
+dest_files=["res://.godot/imported/ARSODA.glb-c74cf4354b871bac6da56cbe3d0b8a88.scn"]
 
 [params]
 
@@ -32,17 +32,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"meshes": {
-"VendingMachine_Cube_007": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 1,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

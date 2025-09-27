@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxumk2c4typ34"]
+
+[ext_resource type="PackedScene" uid="uid://b8uox030en6h" path="res://models/wares/utah_teapot_continous_quads/scene.gltf" id="1_wdli4"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_wdli4")]
