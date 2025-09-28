@@ -1,0 +1,11 @@
+Model Information:
+* title:	Commodore PET
+* source:	https://sketchfab.com/3d-models/commodore-pet-53ed8fb628ac44589fa49e812ed87695
+* author:	SeanNicolas (https://sketchfab.com/SeanNicolas)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Commodore PET" (https://sketchfab.com/3d-models/commodore-pet-53ed8fb628ac44589fa49e812ed87695) by SeanNicolas (https://sketchfab.com/SeanNicolas) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

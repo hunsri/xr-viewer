@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sony VHS Tape
+* source:	https://sketchfab.com/3d-models/sony-vhs-tape-c5aa1002e2ce424db711830d1bec1024
+* author:	diwhy.life (https://sketchfab.com/diwhy.life)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sony VHS Tape" (https://sketchfab.com/3d-models/sony-vhs-tape-c5aa1002e2ce424db711830d1bec1024) by diwhy.life (https://sketchfab.com/diwhy.life) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

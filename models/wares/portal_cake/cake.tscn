@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3q25w6uf3tkr"]
+
+[ext_resource type="PackedScene" uid="uid://pol1dh0fltfv" path="res://models/wares/portal_cake/scene.gltf" id="1_fm8rs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm8rs"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.631373, 0.482353, 0.298039, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_55let"]
+material = SubResource("StandardMaterial3D_fm8rs")
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_fm8rs")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(0.01, 0, 0, 0, -4.37114e-10, 0.01, 0, -0.01, -4.37114e-10, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_model" index="0"]
+transform = Transform3D(33.201, 0, 0, 0, -4.1535e-09, -33.2225, 0, 0.095021, -1.4522e-06, 0, -1.22224e-08, 0.279615)
+mesh = SubResource("CylinderMesh_55let")
+skeleton = NodePath("../..")

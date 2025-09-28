@@ -1,0 +1,11 @@
+Model Information:
+* title:	Portal Cake
+* source:	https://sketchfab.com/3d-models/portal-cake-b62caa46c1c447b3ae78c3e18d47edca
+* author:	ROAD Software (https://sketchfab.com/Redwthr)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Portal Cake" (https://sketchfab.com/3d-models/portal-cake-b62caa46c1c447b3ae78c3e18d47edca) by ROAD Software (https://sketchfab.com/Redwthr) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
