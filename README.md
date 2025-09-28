@@ -32,3 +32,15 @@ A good tutorial on how to setup the project and deploy it can be found [here](ht
 
 After everything is set up you can use the Godot Remote Deploy to install the project on the Meta Quest 3 device.
 
+## Credit
+"Commodore PET" (https://sketchfab.com/3d-models/commodore-pet-53ed8fb628ac44589fa49e812ed87695) by SeanNicolas (https://sketchfab.com/SeanNicolas) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)</br>
+
+"Minecraft Redstone Lamp" (https://sketchfab.com/3d-models/minecraft-redstone-lamp-b8034a7099584601b6922166d461585c) by Mareon (https://sketchfab.com/mareoncz) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)</br>
+
+"Portal Cake" (https://sketchfab.com/3d-models/portal-cake-b62caa46c1c447b3ae78c3e18d47edca) by ROAD Software (https://sketchfab.com/Redwthr) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)</br>
+
+"Sony VHS Tape" (https://sketchfab.com/3d-models/sony-vhs-tape-c5aa1002e2ce424db711830d1bec1024) by diwhy.life (https://sketchfab.com/diwhy.life) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)</br>
+
+"Table" (https://sketchfab.com/3d-models/table-6cae5dd804394d90b89fc98b72a48027) by Harsh Wardhan (https://sketchfab.com/harshwardhan847) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)</br>
+
+"Utah Teapot Continous Quads" (https://sketchfab.com/3d-models/utah-teapot-continous-quads-a358f40a15294e9bb19b6ca6e41d37d1) by saw (https://sketchfab.com/saw) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)</br>
